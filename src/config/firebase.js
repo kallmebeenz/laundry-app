@@ -1,8 +1,8 @@
-import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
-import { getAuth } from "firebase/auth";
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import "firebase/compat/firestore";
+import "firebase/compat/storage";
 
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyBGZg1DUwzfN8YLBKVMgAM0ItWy6ALyob4",
   authDomain: "laundry-shop-cc237.firebaseapp.com",
@@ -12,12 +12,11 @@ const firebaseConfig = {
   appId: "1:570550390383:web:681f75d56fb15dd22f479a"
 };
 
-const firebaseApp = initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+const auth = firebase.auth();
+const provider = new firebase.auth.GoogleAuthProvider();
+const storage = firebase.storage();
 
-
-const db = getFirestore(firebaseApp);
-const auth = getAuth(firebaseApp);
-
-export { db, auth };
-export default firebaseApp;
-
+export { auth, provider, storage };
+export default db;
