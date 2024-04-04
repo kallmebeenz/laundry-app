@@ -2,6 +2,7 @@
 import cart from "./cart/cart"; // Importing the 'cart' reducer from the 'cart' directory
 import user from "./user/user"; // Importing the 'user' reducer from the 'user' directory
 import userInfo from "./userInfo/userInfo"; // Importing the 'userInfo' reducer from the 'userInfo' directory
+import articleReducer from "./articleReducer/articleReducer";
 import { configureStore, combineReducers } from "@reduxjs/toolkit"; // Importing functions from Redux Toolkit for store configuration
 import thunk from 'redux-thunk'; // Importing the 'thunk' middleware for handling asynchronous actions
 
@@ -9,7 +10,8 @@ import thunk from 'redux-thunk'; // Importing the 'thunk' middleware for handlin
 const rootReducer = combineReducers({
   cart,       // Adding the 'cart' reducer to the combined reducer
   user,       // Adding the 'user' reducer to the combined reducer
-  userInfo, 
+  userInfo,
+  articleReducer 
    // Adding the 'userInfo' reducer to the combined reducer
 });
 

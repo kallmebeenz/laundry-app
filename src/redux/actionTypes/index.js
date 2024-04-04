@@ -9,3 +9,7 @@ export const SET_DELIVERY_DETAILS ='store/userInfo/SET_DELIVERY_DETAILS';
 export const UPDATE_USER_ORDERS = 'store/userInfo/UPDATE_USER_ORDERS';
 export const DELETE_USER_ORDERS = 'store/userInfo/DELETE_USER_ORDERS';
 
+export const SET_LOADING_STATUS = "store/articleReducer/SET_LOADING_STATUS";
+export const GET_ARTICLES = "store/articleReducer/GET_ARTICLES";
+
+

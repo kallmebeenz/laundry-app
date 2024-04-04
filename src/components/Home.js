@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import background from "../images/home-bg.jpg";
 import DeliveryDetailsForm from"./DeliveryDetailsForm";
 import background2 from "../images/home-bg-2.jpg";
+import Main from "./Main";
 import "../styles/Home.css";
 import Product from "./Product"; 
 
@@ -246,7 +247,7 @@ function Home({ mediaWidth }) {
 
 <div className="home__row">
         <DeliveryDetailsForm/>
-      
+        <Main/>
          </div>
       {mediaWidth > 840 && (
         <div
