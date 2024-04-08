@@ -285,11 +285,7 @@ function PostalModal(props) {
 	);
 }
 
-const mapStateToProps = (state) => {
-	return {
-		user: state.userState.user,
-	};
-};
+
 
 const mapDispatchToProps = (dispatch) => {
 	return {
@@ -297,4 +293,4 @@ const mapDispatchToProps = (dispatch) => {
 	};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostalModal);
+export default connect( mapDispatchToProps)(PostalModal);

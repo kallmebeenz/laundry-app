@@ -354,9 +354,9 @@ function Main(props) {
 const mapStateToProps = (state) => {
 	console.log ("state")
 	return {
-		loading: state.articleState.loading,
-		articles: state.articleState.articles,
-		ids: state.articleState.ids,
+		loading: state.articleReducer.loading,
+		articles: state.articleReducer.articles,
+		ids: state.articleReducer.ids,
 	};
 };
 
