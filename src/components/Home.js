@@ -216,10 +216,8 @@ function Home({ mediaWidth }) {
           />     
             </div>
 
-        <div className="home__row">
-          {/* Display product information using the Product component */}
-          {/* Each Product component represents a product card */}
-          <Product
+            <div className="home__row">
+            <Product
             key="537356"
             id="537356"
             image={teddy}
@@ -235,9 +233,21 @@ function Home({ mediaWidth }) {
             price="599.99"
             rating={4.5}
           />
+
+            </div>
+       
+
+        <div className="home__row">
+          {/* Display product information using the Product component */}
+          {/* Each Product component represents a product card */}
+         
+                <DeliveryDetailsForm/>
+        <Main/>
+
         </div>
 
       </div>
+      
       {/* Check if the width of the media is greater than 840 pixels.
   // If the condition is met, create a div element in the HTML with a specific class.
   // The class name of the div will depend on the value of the 'alert' variable.
@@ -245,10 +255,7 @@ function Home({ mediaWidth }) {
   // otherwise, just use the base class name.
   // This <div> will serve as an alert container.*/}
 
-<div className="home__row">
-        <DeliveryDetailsForm/>
-        <Main/>
-         </div>
+
       {mediaWidth > 840 && (
         <div
           className={
@@ -260,7 +267,10 @@ function Home({ mediaWidth }) {
           {alert}
         </div>
       )}
+
+      
     </div>
+    
   );
 }
 

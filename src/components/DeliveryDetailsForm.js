@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import "../styles/DeliveryDetailsForm.css";
+import "../styles/CheckoutProduct.css";
 import { useNavigate } from 'react-router-dom'; // Import useHistory hook to navigate to another page
 import { setDeliveryDetails } from '../redux/actions';
 
@@ -30,9 +31,12 @@ const DeliveryDetailsForm = () => {
   };
 
   return (
+    
+    <div className="input_form">
     <form onSubmit={handleSubmit}>
         
       {/* Input fields */}
+    <h3>DELIVERY INFORMATION</h3>
 
       <label>
         Phone Number:
@@ -76,7 +80,7 @@ const DeliveryDetailsForm = () => {
       </label>
       <button type="submit">Submit</button>
     </form>
-
+    </div>
       
   );
 

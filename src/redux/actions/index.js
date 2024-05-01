@@ -56,12 +56,7 @@ export function postArticleAPI(payload) {
 		} else if (payload.video) {
 			dispatch(setLoading(true));
 			db.collection("articles").add({
-				actor: {
-					description: payload.user.email,
-					title: payload.user.displayName,
-					date: payload.timestamp,
-					image: payload.user.photoURL,
-				},
+				
 				video: payload.video,
 				sharedImg: "",
 				likes: {
@@ -75,12 +70,7 @@ export function postArticleAPI(payload) {
 		} else if (payload.image === "" && payload.video === "") {
 			dispatch(setLoading(true));
 			db.collection("articles").add({
-				actor: {
-					description: payload.user.email,
-					title: payload.user.displayName,
-					date: payload.timestamp,
-					image: payload.user.photoURL,
-				},
+				
 				video: "",
 				sharedImg: "",
 				likes: {
