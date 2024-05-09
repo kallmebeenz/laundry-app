@@ -23,61 +23,14 @@ export function getArticles(payload, id) {
 
 export function postArticleAPI(payload) {
 	return (dispatch) => {
-		if (payload.image !== "") {
-			dispatch(setLoading(true));
-			const upload = storage.ref(`images/${payload.image.name}`).put(payload.image);
-			upload.on(
-				"state_changed",
-				(snapshot) => {
-					const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-				},
-				(err) => alert(err),
-				async () => {
-					const downloadURL = await upload.snapshot.ref.getDownloadURL();
-					db.collection("articles").add({
-						actor: {
-							description: payload.user.email,
-							title: payload.user.displayName,
-							date: payload.timestamp,
-							image: payload.user.photoURL,
-						},
-						video: payload.video,
-						sharedImg: downloadURL,
-						likes: {
-							count: 0,
-							whoLiked: [],
-						},
-						comments: 0,
-						description: payload.description,
-					});
-					dispatch(setLoading(false));
-				}
-			);
-		} else if (payload.video) {
-			dispatch(setLoading(true));
-			db.collection("articles").add({
+		
 				
-				video: payload.video,
-				sharedImg: "",
-				likes: {
-					count: 0,
-					whoLiked: [],
-				},
-				comments: 0,
-				description: payload.description,
-			});
-			dispatch(setLoading(false));
-		} else if (payload.image === "" && payload.video === "") {
+				 if (payload.image === "" && payload.video === "") {
 			dispatch(setLoading(true));
 			db.collection("articles").add({
 				
 				video: "",
 				sharedImg: "",
-				likes: {
-					count: 0,
-					whoLiked: [],
-				},
-				comments: 0,
 				description: payload.description,
 			});
 			dispatch(setLoading(false));
